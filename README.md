@@ -1,6 +1,10 @@
-# hackathon-public-transport-sg
+# Open Data Hack St. Gallen
+[Open Data Hack St. Gallen](https://opendata-hack-stgallen.devpost.com/) vom 6. November 2021 bis 8. November 2021.
 
-# Case:
+## Team:
+https://originate.ch/team/
+
+## Case:
 
 Der folgende Case wird vom Hackathon-Event zur Verfügung gestellt:
 
@@ -10,14 +14,14 @@ Der folgende Case wird vom Hackathon-Event zur Verfügung gestellt:
 
 Unser Ziel orientiert sich an dieser Fragestellung. Wir haben versucht, die Personenströme des öffentlichen Verkehrs im Kanton St. Gallen darzustellen. Dies auf zwei Arten: entlang der Verkehrsachsen und über frei definierbare Grenzen hinweg.
 
-# Datensatz
+## Datensatz
 
 ÖV Frequenzen an den Haltestellen im Kanton St. Gallen:
  https://daten.sg.ch/explore/dataset/frequenzen-offentlicher-verkehr/
 
 
 
-# Umsetzung
+## Umsetzung
 
 Im ersten Schritt wird der auf daten.sg.ch zur Verfügung gestellte Datensatz zu den ÖV Frequenzen an den Haltestellen umgebaut. Das heisst, dass die Personen-Besetzung und die Ein- und Ausstiege von den ÖV Fahrzeugen an den Haltestellen auf die Strecke umgerechnet wird. Somit weiss man, wie viele Personen 
 
@@ -25,7 +29,7 @@ Anschliessend kann über eine freidefinierbare Linie eine Grenze erstellt werden
 
 
 
-# Datenlage
+## Datenlage
 
 Zur Zeit stehen nur durchschnittliche Tageswerte über ein Jahr zur Verfügung. Somit ist eine Auflösung nach Uhrzeit und Datum nicht möglich. Somit sind auch zeitlich definierte Auslastungen der ÖV Fahrzeugen nicht möglich
 
@@ -33,7 +37,7 @@ Der Ausgangsdatensatz hat auch nur Informationen der regionalen Verkehrsunterneh
 
 Die Daten aus jüngerer Zeit weisen - unserer Ansicht nacht - eine höhere Qualität aus.
 
-# Ausblick 
+## Ausblick 
 
 Verschiedene Erweiterungen der bisherigen Lösung sind denkbar:
 - Auswerten und Vergleich anderer Verkehrsteilnehmer, insbesondere Velo und motorisierter Individualverkehr

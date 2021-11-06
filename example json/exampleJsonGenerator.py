@@ -28,9 +28,9 @@ for i in range(5):
                                              [random.uniform(9.39, 9.395), random.uniform(47.43, 47.434)],
                                              [random.uniform(9.39, 9.395), random.uniform(47.43, 47.434)]]
                          },
-    fields['zugestiegen_mofr']  = random.uniform(1, 2)
+    fields['zugestiegen_mofr'] = random.uniform(1, 2)
     fields['zugestiegen_sa'] = random.uniform(1, 2)
-    fields['zugestiegen_so']  = random.uniform(1, 2)
+    fields['zugestiegen_so'] = random.uniform(1, 2)
 
     record = dict()
     record['fields'] = fields

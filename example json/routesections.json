@@ -1,147 +1,1322 @@
 [{
         "fields": {
-            "bes_sa": 1.6663066904942787,
-            "bes_so": 1.7897846183147923,
+            "zeitraum": "mo_fr",
+            "besetzung": 21.64061678779126,
             "vm": "Bus",
-            "bes_jahr": 1.3426695854130375,
             "linie": "432",
             "richtung": "Sargans",
             "tu": "BOS",
-            "bes_mofr": 1.707164955104573,
-            "didok_nr_start": "8574822",
-            "didok_nr_stop": "8574822",
+            "didok_nr_start": 3226976,
+            "didok_nr_ende": 8185639,
             "gemeinde": "Mels",
             "fp_jahr": "2020",
-            "aus_mofr": 1.9907619908615446,
-            "kurse_mofr": 1.3375489516882928,
-            "kurse_so": 1.6759472456963729,
+            "aus_mofr": 1.2281854921110167,
+            "kurse": 11.105261549847857,
             "region": "Sarganserland-Werdenberg",
-            "kurse_sa": 1.4720802998284,
             "kt": "SG",
-            "GeoShape": [{
-                    "type": "LineString",
-                    "coordinates": [[9.390986064069303, 47.43329241407502], [9.390355009081315, 47.43097632244346], [9.393023499422995, 47.43165178394927]]
-                }
-            ],
-            "zugestiegen_mofr": 1.0674392292040857,
-            "zugestiegen_sa": 1.126318478942161,
-            "zugestiegen_so": 1.947911757973425
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.390364836165459, 47.433973833228855], [9.392638917774986, 47.43031661898652]]
+            },
+            "zugestiegen": 3.972768943546119
         }
     }, {
         "fields": {
-            "bes_sa": 1.038589335635872,
-            "bes_so": 1.3232736991594765,
+            "zeitraum": "sa",
+            "besetzung": 11.996004248902473,
             "vm": "Bus",
-            "bes_jahr": 1.6934718188936566,
             "linie": "432",
             "richtung": "Sargans",
             "tu": "BOS",
-            "bes_mofr": 1.198049153852144,
-            "didok_nr_start": "8574822",
-            "didok_nr_stop": "8574822",
+            "didok_nr_start": 1127889,
+            "didok_nr_ende": 5543534,
             "gemeinde": "Mels",
             "fp_jahr": "2020",
-            "aus_mofr": 1.2075574710651287,
-            "kurse_mofr": 1.5616022454914704,
-            "kurse_so": 1.6344499947370625,
+            "aus_mofr": 1.4654923891542162,
+            "kurse": 7.556661591185498,
             "region": "Sarganserland-Werdenberg",
-            "kurse_sa": 1.3477593731034165,
             "kt": "SG",
-            "GeoShape": [{
-                    "type": "LineString",
-                    "coordinates": [[9.39039864767288, 47.431257184760284], [9.394171676847083, 47.43262360396943], [9.39051133672144, 47.43189463116512]]
-                }
-            ],
-            "zugestiegen_mofr": 1.7489098212787169,
-            "zugestiegen_sa": 1.1725061135135455,
-            "zugestiegen_so": 1.1662273635301743
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.391253603610682, 47.43004767385643], [9.39104664390193, 47.43016100842375]]
+            },
+            "zugestiegen": 2.790320781719181
         }
     }, {
         "fields": {
-            "bes_sa": 1.4411480926050597,
-            "bes_so": 1.8462775137291845,
+            "zeitraum": "so",
+            "besetzung": 90.59814771360024,
             "vm": "Bus",
-            "bes_jahr": 1.3331510341940822,
             "linie": "432",
             "richtung": "Sargans",
             "tu": "BOS",
-            "bes_mofr": 1.8538147231735658,
-            "didok_nr_start": "8574822",
-            "didok_nr_stop": "8574822",
+            "didok_nr_start": 4842627,
+            "didok_nr_ende": 5392278,
             "gemeinde": "Mels",
             "fp_jahr": "2020",
-            "aus_mofr": 1.4708944759677811,
-            "kurse_mofr": 1.8231243453807124,
-            "kurse_so": 1.8572951430572313,
+            "aus_mofr": 1.6231626927616842,
+            "kurse": 2.9904245037093795,
             "region": "Sarganserland-Werdenberg",
-            "kurse_sa": 1.4951997867328886,
             "kt": "SG",
-            "GeoShape": [{
-                    "type": "LineString",
-                    "coordinates": [[9.394647593342631, 47.43008735789792], [9.394721499725703, 47.43135849054164], [9.393398980901475, 47.430704437469124]]
-                }
-            ],
-            "zugestiegen_mofr": 1.0813721763659974,
-            "zugestiegen_sa": 1.7558337349288728,
-            "zugestiegen_so": 1.9987291856398117
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.393959601752824, 47.433793864368056], [9.393078755128476, 47.43021132434908]]
+            },
+            "zugestiegen": 4.7881952918116735
         }
     }, {
         "fields": {
-            "bes_sa": 1.6061458708119418,
-            "bes_so": 1.4381838551035635,
+            "zeitraum": "mo_fr",
+            "besetzung": 38.131100541326006,
             "vm": "Bus",
-            "bes_jahr": 1.0898887178392358,
             "linie": "432",
             "richtung": "Sargans",
             "tu": "BOS",
-            "bes_mofr": 1.2932288745424803,
-            "didok_nr_start": "8574822",
-            "didok_nr_stop": "8574822",
+            "didok_nr_start": 4688004,
+            "didok_nr_ende": 2354677,
             "gemeinde": "Mels",
             "fp_jahr": "2020",
-            "aus_mofr": 1.3751430121945845,
-            "kurse_mofr": 1.8885426042249565,
-            "kurse_so": 1.2260017767373743,
+            "aus_mofr": 1.3738386238391256,
+            "kurse": 9.903060374462596,
             "region": "Sarganserland-Werdenberg",
-            "kurse_sa": 1.5260755044550853,
             "kt": "SG",
-            "GeoShape": [{
-                    "type": "LineString",
-                    "coordinates": [[9.392418048036708, 47.43059249911703], [9.393651365763207, 47.43321161974709], [9.393457313745904, 47.432256148824536]]
-                }
-            ],
-            "zugestiegen_mofr": 1.5658983671712174,
-            "zugestiegen_sa": 1.4360424315906846,
-            "zugestiegen_so": 1.0623887619451913
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.393394819966149, 47.43276771289924], [9.393405563712534, 47.430123140430176]]
+            },
+            "zugestiegen": 1.9341115355362046
         }
     }, {
         "fields": {
-            "bes_sa": 1.8402881481441002,
-            "bes_so": 1.8948345539119589,
+            "zeitraum": "sa",
+            "besetzung": 69.8460139523957,
             "vm": "Bus",
-            "bes_jahr": 1.4596118524799053,
             "linie": "432",
             "richtung": "Sargans",
             "tu": "BOS",
-            "bes_mofr": 1.6073527724543197,
-            "didok_nr_start": "8574822",
-            "didok_nr_stop": "8574822",
+            "didok_nr_start": 8188766,
+            "didok_nr_ende": 1091022,
             "gemeinde": "Mels",
             "fp_jahr": "2020",
-            "aus_mofr": 1.7358280628110303,
-            "kurse_mofr": 1.375030381255998,
-            "kurse_so": 1.7806964385836461,
+            "aus_mofr": 1.7561622660525966,
+            "kurse": 12.893628532797804,
             "region": "Sarganserland-Werdenberg",
-            "kurse_sa": 1.388743006155797,
             "kt": "SG",
-            "GeoShape": [{
-                    "type": "LineString",
-                    "coordinates": [[9.392370928149159, 47.43268077459482], [9.393819175976931, 47.43102361180037], [9.391339436584975, 47.43088644780218]]
-                }
-            ],
-            "zugestiegen_mofr": 1.0543801209641135,
-            "zugestiegen_sa": 1.9048768056524306,
-            "zugestiegen_so": 1.3608492334791127
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.390612100374682, 47.431540693186165], [9.392071785174867, 47.43190905184929]]
+            },
+            "zugestiegen": 1.158115703144953
+        }
+    }, {
+        "fields": {
+            "zeitraum": "so",
+            "besetzung": 89.19204906079788,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 4062522,
+            "didok_nr_ende": 5210197,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.0846696810438212,
+            "kurse": 6.602023248199307,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.392725735455736, 47.431928691735585], [9.392968162137201, 47.43196556499751]]
+            },
+            "zugestiegen": 6.228100817160703
+        }
+    }, {
+        "fields": {
+            "zeitraum": "mo_fr",
+            "besetzung": 58.647317136674076,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 2193100,
+            "didok_nr_ende": 1505919,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.9970481139727942,
+            "kurse": 17.56158896085336,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.391442326453985, 47.4319967233696], [9.392951782114622, 47.43166467179926]]
+            },
+            "zugestiegen": 5.752895519621232
+        }
+    }, {
+        "fields": {
+            "zeitraum": "sa",
+            "besetzung": 76.16322429292946,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 1067791,
+            "didok_nr_ende": 7059868,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.8085167921671736,
+            "kurse": 4.794380737224291,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.393238904285877, 47.43164534506194], [9.394898119526063, 47.43210558947028]]
+            },
+            "zugestiegen": 6.419068013286174
+        }
+    }, {
+        "fields": {
+            "zeitraum": "so",
+            "besetzung": 83.30110388731022,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 6737203,
+            "didok_nr_ende": 2368826,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.687390256084032,
+            "kurse": 4.833809678072388,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.39484543946255, 47.43300869047748], [9.390454467910857, 47.43225672213531]]
+            },
+            "zugestiegen": 2.2616931314816755
+        }
+    }, {
+        "fields": {
+            "zeitraum": "mo_fr",
+            "besetzung": 20.937981443913916,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 3969037,
+            "didok_nr_ende": 7441264,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.5383537927815139,
+            "kurse": 1.0651316352679205,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.393521942537614, 47.43269249347436], [9.393261001868304, 47.43164866449064]]
+            },
+            "zugestiegen": 3.4500255810370533
+        }
+    }, {
+        "fields": {
+            "zeitraum": "sa",
+            "besetzung": 97.36082055106917,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 927237,
+            "didok_nr_ende": 8110545,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.1323369357204383,
+            "kurse": 17.718799182759938,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.393059070497834, 47.43375618315521], [9.394399168757534, 47.43178458640038]]
+            },
+            "zugestiegen": 2.7552345665239417
+        }
+    }, {
+        "fields": {
+            "zeitraum": "so",
+            "besetzung": 58.55233956088638,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 1504054,
+            "didok_nr_ende": 5108903,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.7279209179276962,
+            "kurse": 4.293487894157384,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.390918619974416, 47.43031374676791], [9.390610422947923, 47.43291439190427]]
+            },
+            "zugestiegen": 1.204107201820229
+        }
+    }, {
+        "fields": {
+            "zeitraum": "mo_fr",
+            "besetzung": 76.82872496769006,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 6394101,
+            "didok_nr_ende": 3836389,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.867533522438869,
+            "kurse": 11.710961877330126,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.392330668652445, 47.433482901407096], [9.39261028570418, 47.43117907823788]]
+            },
+            "zugestiegen": 2.6170495655410484
+        }
+    }, {
+        "fields": {
+            "zeitraum": "sa",
+            "besetzung": 82.00782514266166,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 7461459,
+            "didok_nr_ende": 8418519,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.8913438918327667,
+            "kurse": 2.112856188919184,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.390893898905908, 47.43213061863281], [9.393704594892418, 47.43258450494889]]
+            },
+            "zugestiegen": 6.076502514961218
+        }
+    }, {
+        "fields": {
+            "zeitraum": "so",
+            "besetzung": 55.952804224249945,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 6745953,
+            "didok_nr_ende": 4004062,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.6287458382984443,
+            "kurse": 9.130206787149522,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.390932248573908, 47.43350818048032], [9.391396833399018, 47.4305449611031]]
+            },
+            "zugestiegen": 5.379937516357269
+        }
+    }, {
+        "fields": {
+            "zeitraum": "mo_fr",
+            "besetzung": 72.23282308240127,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 7405467,
+            "didok_nr_ende": 3498373,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.526752053525624,
+            "kurse": 19.627803601474504,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.390658773931966, 47.43015827485726], [9.39047144624809, 47.43285343685281]]
+            },
+            "zugestiegen": 4.6508644235012655
+        }
+    }, {
+        "fields": {
+            "zeitraum": "sa",
+            "besetzung": 60.563411787227125,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 5364064,
+            "didok_nr_ende": 2239864,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.6712552264276472,
+            "kurse": 8.88632695355409,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.392104434966997, 47.43379678817964], [9.39107106677884, 47.43312918065369]]
+            },
+            "zugestiegen": 1.7049154064077292
+        }
+    }, {
+        "fields": {
+            "zeitraum": "so",
+            "besetzung": 37.85772350558802,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 1125168,
+            "didok_nr_ende": 1507924,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.0580624044064217,
+            "kurse": 8.127390392263544,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.394373867053774, 47.43132968518893], [9.391129773586714, 47.43059940070532]]
+            },
+            "zugestiegen": 1.457968081376041
+        }
+    }, {
+        "fields": {
+            "zeitraum": "mo_fr",
+            "besetzung": 62.84287488107216,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 2670889,
+            "didok_nr_ende": 3212957,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.3730545653594937,
+            "kurse": 3.3125329315931156,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.393219024283566, 47.43074982213803], [9.393003793690868, 47.43252441564042]]
+            },
+            "zugestiegen": 6.910846165921101
+        }
+    }, {
+        "fields": {
+            "zeitraum": "sa",
+            "besetzung": 71.48562888840799,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 5778862,
+            "didok_nr_ende": 4816591,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.7779326401058861,
+            "kurse": 10.416144542035127,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.39470761758791, 47.43015640116871], [9.394537146057079, 47.4310955064782]]
+            },
+            "zugestiegen": 4.70155032443137
+        }
+    }, {
+        "fields": {
+            "zeitraum": "so",
+            "besetzung": 87.67232422151972,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 3795829,
+            "didok_nr_ende": 8077401,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.2727145061375538,
+            "kurse": 11.46232298059321,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.39408651794979, 47.43150634603777], [9.393891144562913, 47.43162530193867]]
+            },
+            "zugestiegen": 3.3478567990777135
+        }
+    }, {
+        "fields": {
+            "zeitraum": "mo_fr",
+            "besetzung": 6.309870594636688,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 6506305,
+            "didok_nr_ende": 2444606,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.8534448995701518,
+            "kurse": 5.5275829907855565,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.394241011621974, 47.43304027672244], [9.390066732057761, 47.43110313357047]]
+            },
+            "zugestiegen": 6.228868863979891
+        }
+    }, {
+        "fields": {
+            "zeitraum": "sa",
+            "besetzung": 77.19304870896009,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 7686770,
+            "didok_nr_ende": 1410060,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.7462822052494293,
+            "kurse": 10.647015431840911,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.390109091438974, 47.43360882492859], [9.391024302777147, 47.4328593627749]]
+            },
+            "zugestiegen": 3.4050198312937363
+        }
+    }, {
+        "fields": {
+            "zeitraum": "so",
+            "besetzung": 98.24263259352738,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 5895181,
+            "didok_nr_ende": 2371239,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.2300883991614247,
+            "kurse": 5.0300456058982865,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.394902198574203, 47.43181488147111], [9.393886293206084, 47.4333532116829]]
+            },
+            "zugestiegen": 4.163322033154642
+        }
+    }, {
+        "fields": {
+            "zeitraum": "mo_fr",
+            "besetzung": 83.40847520024884,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 5259543,
+            "didok_nr_ende": 5678678,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.7556645093761314,
+            "kurse": 2.1880481129632625,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.392079115239332, 47.43174039512761], [9.394233570656233, 47.43254908724349]]
+            },
+            "zugestiegen": 1.4452127039076228
+        }
+    }, {
+        "fields": {
+            "zeitraum": "sa",
+            "besetzung": 2.3826751926821896,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 7992853,
+            "didok_nr_ende": 4059950,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.157870450900623,
+            "kurse": 12.062517828432014,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.393573199338203, 47.431506142249184], [9.392136557428364, 47.43233585824158]]
+            },
+            "zugestiegen": 6.771784915476068
+        }
+    }, {
+        "fields": {
+            "zeitraum": "so",
+            "besetzung": 90.981618176099,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 5916613,
+            "didok_nr_ende": 1439015,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.4032158151313605,
+            "kurse": 9.012814496856539,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.394858792998436, 47.43349443739244], [9.393135512971197, 47.43242175903623]]
+            },
+            "zugestiegen": 2.3795618598285664
+        }
+    }, {
+        "fields": {
+            "zeitraum": "mo_fr",
+            "besetzung": 39.15279114018549,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 5278889,
+            "didok_nr_ende": 8244745,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.0759626316605848,
+            "kurse": 8.038829157199679,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.393402680585535, 47.433892046206616], [9.391452196978767, 47.433381568224384]]
+            },
+            "zugestiegen": 1.5889075894143954
+        }
+    }, {
+        "fields": {
+            "zeitraum": "sa",
+            "besetzung": 28.646087421795965,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 3556588,
+            "didok_nr_ende": 8067021,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.8530093089648605,
+            "kurse": 14.241981152003122,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.392960443251999, 47.4308786116334], [9.393076880582091, 47.432790909089015]]
+            },
+            "zugestiegen": 6.203874933371846
+        }
+    }, {
+        "fields": {
+            "zeitraum": "so",
+            "besetzung": 95.96870962889487,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 4627356,
+            "didok_nr_ende": 7237623,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.1639437536280142,
+            "kurse": 8.595408829158611,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.392539076280125, 47.43186942335071], [9.3922148679982, 47.43134618364158]]
+            },
+            "zugestiegen": 5.933140476561627
+        }
+    }, {
+        "fields": {
+            "zeitraum": "mo_fr",
+            "besetzung": 54.01333556487127,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 4471833,
+            "didok_nr_ende": 3502503,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.2142791922560061,
+            "kurse": 16.7753291688602,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.392961145452547, 47.43094352623755], [9.3907171153789, 47.43017646267108]]
+            },
+            "zugestiegen": 1.1318591190045233
+        }
+    }, {
+        "fields": {
+            "zeitraum": "sa",
+            "besetzung": 64.15239155690301,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 6372589,
+            "didok_nr_ende": 2554931,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.747906607235417,
+            "kurse": 2.593735091512184,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.393808499214158, 47.433795347683635], [9.390072351786415, 47.43364730869268]]
+            },
+            "zugestiegen": 5.406487812861604
+        }
+    }, {
+        "fields": {
+            "zeitraum": "so",
+            "besetzung": 31.4331231636988,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 4197555,
+            "didok_nr_ende": 6153212,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.3666334784753649,
+            "kurse": 13.654970681642851,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.394014834738142, 47.43276978596935], [9.392384454696648, 47.432932810515375]]
+            },
+            "zugestiegen": 3.6092611262349186
+        }
+    }, {
+        "fields": {
+            "zeitraum": "mo_fr",
+            "besetzung": 64.30286525471698,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 4945576,
+            "didok_nr_ende": 2555484,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.376836731330355,
+            "kurse": 18.833760750196515,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.391977826356596, 47.43055498383103], [9.390280424994021, 47.43004748968075]]
+            },
+            "zugestiegen": 5.6410520587182384
+        }
+    }, {
+        "fields": {
+            "zeitraum": "sa",
+            "besetzung": 47.73628755793823,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 6651228,
+            "didok_nr_ende": 7592197,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.972723036174696,
+            "kurse": 13.780873559944961,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.391276549170565, 47.43157880297976], [9.393289738082771, 47.430081138172234]]
+            },
+            "zugestiegen": 1.2083825242823594
+        }
+    }, {
+        "fields": {
+            "zeitraum": "so",
+            "besetzung": 89.49176879612199,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 8450086,
+            "didok_nr_ende": 6144083,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.3228907269210284,
+            "kurse": 15.748990489390811,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.393695664526321, 47.43342784963781], [9.39388953144889, 47.43353729643375]]
+            },
+            "zugestiegen": 5.512839897251302
+        }
+    }, {
+        "fields": {
+            "zeitraum": "mo_fr",
+            "besetzung": 90.09496422632107,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 2690333,
+            "didok_nr_ende": 4910893,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.997823532207248,
+            "kurse": 12.771001410393664,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.394998367452576, 47.431383664624086], [9.392158063166411, 47.43195121436624]]
+            },
+            "zugestiegen": 6.172830486979855
+        }
+    }, {
+        "fields": {
+            "zeitraum": "sa",
+            "besetzung": 87.2067521161462,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 5173823,
+            "didok_nr_ende": 6661841,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.7622195045852262,
+            "kurse": 3.9970652528047803,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.39037994729552, 47.433453140846254], [9.39131961667944, 47.433241510869145]]
+            },
+            "zugestiegen": 6.761868604339353
+        }
+    }, {
+        "fields": {
+            "zeitraum": "so",
+            "besetzung": 60.469523364787754,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 1023637,
+            "didok_nr_ende": 8500734,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.6708191557735248,
+            "kurse": 19.01421138836873,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.393302746629136, 47.43204431229862], [9.393624031188834, 47.43248828495098]]
+            },
+            "zugestiegen": 5.388725818507278
+        }
+    }, {
+        "fields": {
+            "zeitraum": "mo_fr",
+            "besetzung": 5.9775661590832225,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 4430441,
+            "didok_nr_ende": 6928034,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.3335326077561402,
+            "kurse": 1.2931207694794293,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.393354046133103, 47.43071987445947], [9.392450147111832, 47.4303129786571]]
+            },
+            "zugestiegen": 6.747880923775984
+        }
+    }, {
+        "fields": {
+            "zeitraum": "sa",
+            "besetzung": 2.3400244878924346,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 4754911,
+            "didok_nr_ende": 1970360,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.1078810368495273,
+            "kurse": 15.715040059907214,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.390568897189398, 47.433235947919165], [9.39371298628458, 47.4330869301682]]
+            },
+            "zugestiegen": 2.1370620446002655
+        }
+    }, {
+        "fields": {
+            "zeitraum": "so",
+            "besetzung": 70.25755442800347,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 7272815,
+            "didok_nr_ende": 2644141,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.7599594182970328,
+            "kurse": 7.811726416232573,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.392983767768335, 47.432460069117596], [9.390439214431495, 47.43061936963288]]
+            },
+            "zugestiegen": 5.525107423173141
+        }
+    }, {
+        "fields": {
+            "zeitraum": "mo_fr",
+            "besetzung": 21.274830092413207,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 7803673,
+            "didok_nr_ende": 1519674,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.2831990232019395,
+            "kurse": 6.654837491112381,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.394090009301785, 47.43250187267638], [9.394123105736982, 47.43316673666154]]
+            },
+            "zugestiegen": 1.7152567638080145
+        }
+    }, {
+        "fields": {
+            "zeitraum": "sa",
+            "besetzung": 17.693832627401157,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 5269951,
+            "didok_nr_ende": 3760637,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.4064904231010615,
+            "kurse": 15.24255076684453,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.394269908113843, 47.43094822176632], [9.393651975854564, 47.43117345369173]]
+            },
+            "zugestiegen": 5.061127575783962
+        }
+    }, {
+        "fields": {
+            "zeitraum": "so",
+            "besetzung": 79.40250698218344,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 3733831,
+            "didok_nr_ende": 1722907,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.5459856097887301,
+            "kurse": 12.322868655509012,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.393572036373337, 47.43032172238542], [9.391100279565272, 47.43385375818413]]
+            },
+            "zugestiegen": 1.566924820425942
+        }
+    }, {
+        "fields": {
+            "zeitraum": "mo_fr",
+            "besetzung": 93.7070545989957,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 5009712,
+            "didok_nr_ende": 6383326,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.1418716018026398,
+            "kurse": 2.3828289025854077,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.390782937662493, 47.43082561319269], [9.3941684634324, 47.43345340513017]]
+            },
+            "zugestiegen": 6.409293196485786
+        }
+    }, {
+        "fields": {
+            "zeitraum": "sa",
+            "besetzung": 39.34811720894596,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 4002203,
+            "didok_nr_ende": 2131996,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.5364489722143562,
+            "kurse": 9.173237635579616,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.394231836852434, 47.4328118561485], [9.394724774980249, 47.431267309320376]]
+            },
+            "zugestiegen": 3.8883446887762094
+        }
+    }, {
+        "fields": {
+            "zeitraum": "so",
+            "besetzung": 99.54942441066409,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 5281014,
+            "didok_nr_ende": 2845449,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.5512411615336483,
+            "kurse": 3.0409945921678596,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.394014163751645, 47.4306626700402], [9.394918560695247, 47.43375396049735]]
+            },
+            "zugestiegen": 1.4633346202036088
+        }
+    }, {
+        "fields": {
+            "zeitraum": "mo_fr",
+            "besetzung": 17.801786749391393,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 7436143,
+            "didok_nr_ende": 1350790,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.3503891715717393,
+            "kurse": 16.859839384444232,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.392348746696902, 47.43172475530418], [9.390187098965937, 47.43312846305791]]
+            },
+            "zugestiegen": 4.376253367073121
+        }
+    }, {
+        "fields": {
+            "zeitraum": "sa",
+            "besetzung": 77.14154238668483,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 1946755,
+            "didok_nr_ende": 7011569,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.9666379803973446,
+            "kurse": 17.01424581254443,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.390580876769384, 47.433054126262384], [9.390622058390926, 47.431055058458774]]
+            },
+            "zugestiegen": 1.9784009644681149
+        }
+    }, {
+        "fields": {
+            "zeitraum": "so",
+            "besetzung": 40.61144390960041,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 4423540,
+            "didok_nr_ende": 7017523,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.534523535194603,
+            "kurse": 3.549868930726901,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.394426612693392, 47.4308447909332], [9.394840156871421, 47.430343220804005]]
+            },
+            "zugestiegen": 1.8641369999178676
+        }
+    }, {
+        "fields": {
+            "zeitraum": "mo_fr",
+            "besetzung": 84.83153305295285,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 4768616,
+            "didok_nr_ende": 1535758,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.6057173898775683,
+            "kurse": 11.332578550772013,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.392278333021103, 47.43316794508887], [9.392849760900141, 47.433970422386565]]
+            },
+            "zugestiegen": 5.127024787148821
+        }
+    }, {
+        "fields": {
+            "zeitraum": "sa",
+            "besetzung": 3.6899712286399655,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 3876966,
+            "didok_nr_ende": 8566715,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.695418776783952,
+            "kurse": 12.15540196905246,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.393531270339999, 47.433949197430735], [9.392148558119029, 47.43238497967681]]
+            },
+            "zugestiegen": 2.0366314357344786
+        }
+    }, {
+        "fields": {
+            "zeitraum": "so",
+            "besetzung": 9.610678543590492,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 5496622,
+            "didok_nr_ende": 4215047,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.775054806129342,
+            "kurse": 13.377360791074663,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.394845083098755, 47.43341803828771], [9.394052868993617, 47.43010480507403]]
+            },
+            "zugestiegen": 6.423809125711761
+        }
+    }, {
+        "fields": {
+            "zeitraum": "mo_fr",
+            "besetzung": 59.29108033120007,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 1654153,
+            "didok_nr_ende": 1565891,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.4471303719942352,
+            "kurse": 3.1351178444912495,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.392819283435044, 47.43375814701764], [9.394468752312111, 47.43219211215663]]
+            },
+            "zugestiegen": 4.8283287689711845
+        }
+    }, {
+        "fields": {
+            "zeitraum": "sa",
+            "besetzung": 68.6870263478914,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 8282151,
+            "didok_nr_ende": 3509650,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.2257187412034285,
+            "kurse": 9.297920100216018,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.390843495298899, 47.430622966960286], [9.393935720702224, 47.4338996091736]]
+            },
+            "zugestiegen": 2.3453809843452804
+        }
+    }, {
+        "fields": {
+            "zeitraum": "so",
+            "besetzung": 87.58286260746678,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 3563125,
+            "didok_nr_ende": 8114010,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.7663668343345411,
+            "kurse": 4.3217985523327345,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.393198535271841, 47.43169191749842], [9.39179078655049, 47.43389334939431]]
+            },
+            "zugestiegen": 3.245751628048066
+        }
+    }, {
+        "fields": {
+            "zeitraum": "mo_fr",
+            "besetzung": 49.28025559276632,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 4579775,
+            "didok_nr_ende": 1695129,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.4632375536801265,
+            "kurse": 18.776987313142286,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.392222202816232, 47.43015862843397], [9.39387301259287, 47.432982581297054]]
+            },
+            "zugestiegen": 6.676181351629902
+        }
+    }, {
+        "fields": {
+            "zeitraum": "sa",
+            "besetzung": 9.580496221895823,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 3037423,
+            "didok_nr_ende": 5501434,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.880143722572932,
+            "kurse": 18.90470661765386,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.394074553254987, 47.43322950832001], [9.392156296655031, 47.433690395273594]]
+            },
+            "zugestiegen": 1.7326607797086773
+        }
+    }, {
+        "fields": {
+            "zeitraum": "so",
+            "besetzung": 67.6004457264465,
+            "vm": "Bus",
+            "linie": "432",
+            "richtung": "Sargans",
+            "tu": "BOS",
+            "didok_nr_start": 8065407,
+            "didok_nr_ende": 3057231,
+            "gemeinde": "Mels",
+            "fp_jahr": "2020",
+            "aus_mofr": 1.120219049448218,
+            "kurse": 5.583255404091462,
+            "region": "Sarganserland-Werdenberg",
+            "kt": "SG",
+            "GeoShape": {
+                "type": "LineString",
+                "coordinates": [[9.393325296987976, 47.43140388798341], [9.393290572711674, 47.431735068481025]]
+            },
+            "zugestiegen": 3.2618955625730175
         }
     }
 ]

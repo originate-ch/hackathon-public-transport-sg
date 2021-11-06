@@ -3,7 +3,7 @@ import json
 import pandas as pd
 import requests
 
-FP_DATA_BUFFER_JSON = 'ov_data_buffer_small.json'
+FP_DATA_BUFFER_JSON = 'ov_data_buffer_full.json'
 FP_OV_ROUTE_SECTIONS_JSON = 'ov_route_sections.json'
 DF_JSON_FUER_MAURUS = 'ov_route_sections_df.json'
 

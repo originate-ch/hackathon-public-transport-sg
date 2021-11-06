@@ -20,15 +20,6 @@ Unser Ziel orientiert sich an dieser Fragestellung. Wir haben versucht, die Pers
  https://daten.sg.ch/explore/dataset/frequenzen-offentlicher-verkehr/
 
 
-
-## Umsetzung
-
-Im ersten Schritt wird der auf daten.sg.ch zur Verfügung gestellte Datensatz zu den ÖV Frequenzen an den Haltestellen umgebaut. Das heisst, dass die Personen-Besetzung und die Ein- und Ausstiege von den ÖV Fahrzeugen an den Haltestellen auf die Strecke umgerechnet wird. Somit weiss man, wie viele Personen 
-
-Anschliessend kann über eine freidefinierbare Linie eine Grenze erstellt werden. Mit dem neuen Datensatz kann die Frequenz an der Grenze berechnet werden. Dies gibt Transparenz, wie viele Personen diese Grenze passieren.
-
-
-
 ## Datenlage
 
 Zur Zeit stehen nur durchschnittliche Tageswerte über ein Jahr zur Verfügung. Somit ist eine Auflösung nach Uhrzeit und Datum nicht möglich. Somit sind auch zeitlich definierte Auslastungen der ÖV Fahrzeugen nicht möglich
@@ -36,6 +27,17 @@ Zur Zeit stehen nur durchschnittliche Tageswerte über ein Jahr zur Verfügung. 
 Der Ausgangsdatensatz hat auch nur Informationen der regionalen Verkehrsunternehmen. Die Daten des Fernverkehrs fehlen.
 
 Die Daten aus jüngerer Zeit weisen - unserer Ansicht nacht - eine höhere Qualität aus.
+
+## Umsetzung
+
+Im ersten Schritt wird der auf daten.sg.ch zur Verfügung gestellte Datensatz zu den ÖV Frequenzen an den Haltestellen umgebaut. Das heisst, dass die Personen-Besetzung und die Ein- und Ausstiege von den ÖV Fahrzeugen an den Haltestellen auf die Strecke umgerechnet wird. Somit weiss man, wie viele Personen 
+
+Anschliessend kann über eine freidefinierbare Linie eine Grenze erstellt werden. Mit dem neuen Datensatz kann die Frequenz an der Grenze berechnet werden. Dies gibt Transparenz, wie viele Personen diese Grenze passieren.
+
+## Anwendung
+Das erste Skript `DataReshaper.py` dient dazu, den Datensatz zu den Haltestellenfrequenzen zu Bereinigen und die Information auf Strecken zwischen den Haltestellen zu übertragen. Das zweite Skript `TrafficCounter.py` benutzt diesen angepassten Datensatz, um den Personenfluss über Grenzen zu berechnen. Diese Grenzen müssen in einem JSON File definiert sein.
+
+
 
 ## Ausblick 
 

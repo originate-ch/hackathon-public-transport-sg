@@ -265,12 +265,11 @@ def test_main_TrafficCounter() -> None:
 
 # test_intersection_function()
 # test_label_points()
-test_main_TrafficCounter()
+# test_main_TrafficCounter()
 
 # -------------------------------------------------------------------------
 # apply main function
 # -------------------------------------------------------------------------
-"""
+
 main_traffic_counter(path_to_df='ov_route_sections_FULL_df.json',
                      path_to_border='example json/borders_presentation.json')
-"""

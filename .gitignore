@@ -131,3 +131,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+/ov_route_sections_BAHN_df.json
+/ov_route_sections_FULL_df.json
+/ov_route_sections_VBSG.json
+/ov_route_sections_VBSG_df.json

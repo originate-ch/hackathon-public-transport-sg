@@ -1,7 +1,7 @@
 import time
 import numpy as np
 import pandas as pd
-from itertools import pairwise
+from more_itertools import pairwise
 import matplotlib.pyplot as plt
 
 
@@ -17,7 +17,12 @@ class Point:
         return Point(self.x - other.x, self.y - other.y)
 
     def __rmul__(self, other):
-        return Point(other * self.x, other * self.y)
+        if isinstance(other, int):
+            return Point(other * self.x, other * self.y)
+        elif isinstance(other, float):
+            return Point(other * self.x, other * self.y)
+        else:
+            raise TypeError('Multiplication is not defined for Point and {}'.format(type(other)))
 
     def __truediv__(self, other):
         if other == 0.0:
@@ -39,7 +44,9 @@ def is_on_line(line: Line, R: Point) -> bool:
 
 
 def compute_orientation(A: Point, B: Point, C: Point) -> int:
-    det = (B.x - A.x) * (C.y - B.y) - (B.y - A.y) * (C.x - B.x)
+    ab = B - A
+    bc = C - B
+    det = ab.x * bc.y - ab.y * bc.x
     if det < 0.0:
         # negative orientation
         return -1
@@ -108,19 +115,25 @@ def is_in_bounding_rectangle(P: Point, corner_points: tuple) -> bool:
         return True
 
 
-def get_nb_passengers(P: Point) -> float:
-    pass
+def compute_direction_traffic(line_border: Line, line_traffic: Line) -> int:
+    dir_border = line_border.end_point - line_border.start_point
+    dir_traffic = line_traffic.end_point - line_traffic.start_point
+    det = dir_border.x * dir_traffic.y - dir_border.y * dir_traffic.x
+    if det < 0:
+        return -1
+    if det > 0:
+        return 1
 
 
-def check_intersection_border_traffic_line(border_points: list, traffic_line_points: list) -> list:
-    incoming_traffic_points = []
-    for A, B in pairwise(traffic_line_points):
+def check_intersection_border_traffic_line(border_points: list, traffic_data: pd.DataFrame) -> dict:
+    incoming_traffic_points = {-1: 0.0, 1: 0.0}
+    for A, B in pairwise(traffic_data['lines']):
         line_traffic = Line(A, B)
         for P, Q in pairwise(border_points):
             line_border = Line(P, Q)
             if do_intersect(line_border, line_traffic):
-                incoming_traffic = get_nb_passengers(P)
-                incoming_traffic_points.append((P, Q, incoming_traffic))
+                direction = compute_direction_traffic(line_traffic)
+                incoming_traffic_points[direction] += traffic_data['passenger_numbers']
     return incoming_traffic_points
 
 
@@ -165,5 +178,13 @@ def test_label_points() -> None:
     plt.grid()
     plt.show()
 
+
+def test_intersect_border_traffic_lines() -> None:
+    border_line = (Point(47.408690, 9.325053), Point(47.406926, 9.232165), Point(47.405088, 9.235563))
+    df_traffic = pd.read_json('ov_route_sections.json')
+
+    return None
+
 # test_intersection_function()
 # test_label_points()
+test_intersect_border_traffic_lines()

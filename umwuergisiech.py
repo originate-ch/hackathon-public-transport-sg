@@ -5,18 +5,19 @@ import requests
 
 START_YEAR = 2016
 END_YEAR = 2021
+APPENDIX = 'VBSG'
 
 GEO_SHAPE = 'GeoShape'
 
-FP_DATA_BUFFER_JSON = 'ov_data_buffer_full.json'
-FP_OV_ROUTE_SECTIONS_JSON = 'ov_route_sections.json'
-DF_JSON_FUER_MAURUS = 'ov_route_sections_df.json'
+FP_DATA_BUFFER_JSON = f'ov_data_buffer_{APPENDIX}.json'
+FP_OV_ROUTE_SECTIONS_JSON = f'ov_route_sections_{APPENDIX}.json'
+DF_JSON_FUER_MAURUS = f'ov_route_sections_{APPENDIX}_df.json'
 
 
 def get_year_data_from_server(year):
     r = requests.get(
         f'https://daten.sg.ch//api/records/1.0/search/?dataset=frequenzen-offentlicher-verkehr&q=&rows=-1&facet=fp_jahr&'
-        f'facet=didok_nr&facet=haltestelle_didok&facet=bemerkung_tu&facet=linie&facet=vm&facet=sequenz&refine.fp_jahr={year}')
+        f'facet=didok_nr&facet=haltestelle_didok&facet=bemerkung_tu&facet=linie&facet=vm&facet=sequenz&refine.fp_jahr={year}&refine.tu=VBSG')
     if r:
         year_data = r.json()
         year_records = year_data['records']
@@ -140,6 +141,7 @@ def get_so_info(df_src, _current_sequence, _base_info):
 if __name__ == '__main__':
     df_ov_stops = get_df_ov_stops()
     df_ov_route_sections = initialize_df_ov_route_sections()
+    year = 0
     for df_year in df_ov_stops.groupby('fp_jahr'):
         for df_line in df_year[1].groupby('linie'):
             for df_line_direction in df_line[1].groupby('richtung'):
@@ -158,8 +160,9 @@ if __name__ == '__main__':
 
                     so_info = get_so_info(df_sequence, current_sequence, base_info)
                     if so_info[GEO_SHAPE]:
-                        df_ov_route_sections = df_ov_route_sections.append(so_info, ignore_index=True)
+                       df_ov_route_sections = df_ov_route_sections.append(so_info, ignore_index=True)
                 print(df_sequence.at[0, 'linie'])
+
     # todo: improve nan handling --> not in dataset if nan
     df_ov_route_sections = df_ov_route_sections.fillna(0)
 

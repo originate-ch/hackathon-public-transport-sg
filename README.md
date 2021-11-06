@@ -37,6 +37,7 @@ Anschliessend kann über eine freidefinierbare Linie eine Grenze erstellt werden
 ## Anwendung
 Das erste Skript `DataReshaper.py` dient dazu, den Datensatz zu den Haltestellenfrequenzen zu Bereinigen und die Information auf Strecken zwischen den Haltestellen zu übertragen. Das zweite Skript `TrafficCounter.py` benutzt diesen angepassten Datensatz, um den Personenfluss über Grenzen zu berechnen. Diese Grenzen müssen in einem JSON File definiert sein.
 
+![DataFlow](./images/DataFlow.png)
 
 
 ## Ausblick 

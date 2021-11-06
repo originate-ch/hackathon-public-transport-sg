@@ -4,7 +4,7 @@
 
 Der folgende Case wird vom Hackathon-Event zur Verfügung gestellt:
 
-**Öffentlicher Verkehr & Personenströme in St.Gallen:** Wie strömt die Bevölkerung in die Stadt St.Gallen? Identifiziert und  visualisiert die ÖV-Korridore in und aus St.Gallen anhand der  Frequenzdaten des öffentlichen Verkehrs. *Mögliche Zusätze: Vergleich der Ströme mit dem motorisierten Individualverkehr*, *Auswirkungen einer [Verschiebung des Bahnhofs Bruggen](https://www.tagblatt.ch/ostschweiz/stgallen/vision-die-bahnhoefe-bruggen-und-haggen-zu-einem-neuen-bahnhof-kombinieren-jetzt-prueft-stgallen-die-machbarkeit-ld.2111948) auf die Kapazitäten der Linien*
+**Öffentlicher Verkehr & Personenströme in St. Gallen:** Wie strömt die Bevölkerung in die Stadt St.Gallen? Identifiziert und visualisiert die ÖV-Korridore in und aus St. Gallen anhand der Frequenzdaten des öffentlichen Verkehrs. *Mögliche Zusätze: Vergleich der Ströme mit dem motorisierten Individualverkehr*, *Auswirkungen einer [Verschiebung des Bahnhofs Bruggen](https://www.tagblatt.ch/ostschweiz/stgallen/vision-die-bahnhoefe-bruggen-und-haggen-zu-einem-neuen-bahnhof-kombinieren-jetzt-prueft-stgallen-die-machbarkeit-ld.2111948) auf die Kapazitäten der Linien*
 
 
 
@@ -37,6 +37,7 @@ Die Daten aus jüngerer Zeit weisen - unserer Ansicht nacht - eine höhere Quali
 
 Verschiedene Erweiterungen der bisherigen Lösung sind denkbar:
 - Auswerten und Vergleich anderer Verkehrsteilnehmer, insbesondere Velo und motorisierter Individualverkehr
+- Genauere Auflösung des Verkehrsflusses durch Informationen aus Liniennetzplan
 - Erweitern des Python-Skript für das Berechnen des Grenzverkehrs mit einer REST-API, damit Datensätze dynamisch generiert werden können
 - Verwenden des Tools zur Erfassung von Transitverkehr
 

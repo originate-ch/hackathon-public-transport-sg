@@ -41,7 +41,7 @@ Die Daten aus jüngerer Zeit weisen - unserer Ansicht nacht - eine höhere Quali
 
 Verschiedene Erweiterungen der bisherigen Lösung sind denkbar:
 - Auswerten und Vergleich anderer Verkehrsteilnehmer, insbesondere Velo und motorisierter Individualverkehr
-- Genauere Auflösung des Verkehrsflusses durch Informationen aus Liniennetzplan
+- Genauere Auflösung des Verkehrsflusses durch Informationen aus [Liniennetzplan](https://daten.sg.ch/explore/dataset/ov-vbsg%40stadt-stgallen/information/?disjunctive.linie&dataChart=eyJxdWVyaWVzIjpbeyJjb25maWciOnsiZGF0YXNldCI6Im92LXZic2dAc3RhZHQtc3RnYWxsZW4iLCJvcHRpb25zIjp7ImRpc2p1bmN0aXZlLmxpbmllIjp0cnVlLCJzb3J0IjoibGluaWUifX0sImNoYXJ0cyI6W3siYWxpZ25Nb250aCI6dHJ1ZSwidHlwZSI6ImNvbHVtbiIsImZ1bmMiOiJDT1VOVCIsInNjaWVudGlmaWNEaXNwbGF5Ijp0cnVlLCJjb2xvciI6IiMxOTYzMEEifV0sInhBeGlzIjoibGluaWUiLCJtYXhwb2ludHMiOjUwLCJzb3J0IjoiIn1dLCJ0aW1lc2NhbGUiOiIiLCJkaXNwbGF5TGVnZW5kIjp0cnVlLCJhbGlnbk1vbnRoIjp0cnVlfQ%3D%3D&location=17,47.41992,9.36728&basemap=jawg.streets)
 - Erweitern des Python-Skript für das Berechnen des Grenzverkehrs mit einer REST-API, damit Datensätze dynamisch generiert werden können
 - Verwenden des Tools zur Erfassung von Transitverkehr
 

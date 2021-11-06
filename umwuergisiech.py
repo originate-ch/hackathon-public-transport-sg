@@ -1,14 +1,13 @@
-# This is a sample Python script.
 
-# Press Umschalt+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
+import json
 import pandas as pd
 import requests
-import json
 
 FP_DATA_BUFFER_JSON = 'ov_data_buffer_full.json'
 FP_OV_ROUTE_SECTIONS_JSON = 'ov_route_sections.json'
+DF_JSON_FUER_MAURUS = 'ov_route_sections_df.json'
+
 
 def get_year_data_from_server(year):
     r = requests.get(
@@ -59,6 +58,9 @@ def initialize_df_ov_route_sections():
                'GeoShape',
                'vm',
                'tu',
+               'region',
+               'kt',
+               'gemeinde',
                'fp_jahr',
                'zeitraum',
                'besetzung',
@@ -66,6 +68,61 @@ def initialize_df_ov_route_sections():
                'kurse']
     df = pd.DataFrame(columns=columns)
     return df
+
+
+def copy_if_available(df_src, index, parameter_name_src, dict_destination, parameter_name_destination):
+    if df_src.at[index, parameter_name_src]:
+        dict_destination[parameter_name_destination]: df_src.at[index, parameter_name_src]
+
+
+def add_geopoos(base_info):
+    base_info['GeoShape'] = {'type': 'LineString',
+                             'coordinates':
+                                 [sequence_df.at[i, 'geopos'],
+                                  sequence_df.at[i + 1, 'geopos']]},
+
+
+def get_base_info():
+    base_info = dict()
+    copy_if_available(df_ov_stops, i, 'didok_nr', base_info, 'didok_nr_start'),
+    copy_if_available(df_ov_stops, i + 1, 'didok_nr', base_info, 'didok_nr_ende'),
+    copy_if_available(df_ov_stops, i, 'linie', base_info, 'linie'),
+    copy_if_available(df_ov_stops, i, 'richtung', base_info, 'richtung'),
+    add_geopoos(base_info)
+    copy_if_available(df_ov_stops, i, 'region', base_info, 'region'),
+    copy_if_available(df_ov_stops, i, 'kt', base_info, 'kt'),
+    copy_if_available(df_ov_stops, i, 'gemeinde', base_info, 'gemeinde'),
+    copy_if_available(df_ov_stops, i, 'vm', base_info, 'vm'),
+    copy_if_available(df_ov_stops, i, 'tu', base_info, 'tu'),
+    copy_if_available(df_ov_stops, i, 'fp_jahr', base_info, 'fp_jahr'),
+    return base_info
+
+
+def get_mofr_info():
+    mofr_info = {'zeitraum': 'Mo - Fr'}
+    copy_if_available(df_ov_stops, i, 'bes_mofr', mofr_info,'besetzung' ),
+    copy_if_available(df_ov_stops, i, 'ein_mofr', mofr_info, 'zugestiegen'),
+    copy_if_available(df_ov_stops, i, 'kurse_mofr', mofr_info, 'kurse'),
+    mofr_info.update(base_info)
+    return mofr_info
+
+
+def get_sa_info():
+    sa_info = {'zeitraum': 'Sa'}
+    copy_if_available(df_ov_stops, i, 'bes_sa', sa_info,'besetzung' ),
+    copy_if_available(df_ov_stops, i,'ein_sa', sa_info, 'zugestiegen'),
+    copy_if_available(df_ov_stops, i, 'kurse_sa', sa_info, 'kurse'),
+    sa_info.update(base_info)
+    return sa_info
+
+
+def get_so_info():
+    so_info = {'zeitraum': 'So'}
+    copy_if_available(df_ov_stops, i, 'bes_so', so_info, 'besetzung'),
+    copy_if_available(df_ov_stops, i, 'ein_so', so_info, 'zugestiegen'),
+    copy_if_available(df_ov_stops, i, 'kurse_so', so_info, 'kurse'),
+    so_info.update(base_info)
+    return so_info
 
 
 # Press the green button in the gutter to run the script.
@@ -77,45 +134,21 @@ if __name__ == '__main__':
             sequence_df = line_direction_df[1].sort_values('sequenz').copy()
             sequence_df.reset_index(inplace=True)
             for i in range(len(sequence_df) - 1):
-                base_info = {
-                    'didok_nr_start': sequence_df.at[i, 'didok_nr'],
-                    'didok_nr_ende': sequence_df.at[i + 1, 'didok_nr'],
-                    'linie': sequence_df.at[i, 'linie'],
-                    'richtung': sequence_df.at[i, 'richtung'],
+                base_info = get_base_info()
 
-                    'GeoShape': {'type': 'LineString',
-                                 'coordinates':
-                                     [sequence_df.at[i, 'geopos'],
-                                      sequence_df.at[i + 1, 'geopos']]},
-                    'vm': sequence_df.at[i, 'vm'],
-                    'tu': sequence_df.at[i, 'tu'],
-                    'fp_jahr': sequence_df.at[i, 'fp_jahr']}
-                mofr_info = {
-                    'zeitraum': 'Mo - Fr',
-                    'besetzung': sequence_df.at[i, 'bes_mofr'],
-                    'zugestiegen': sequence_df.at[i, 'ein_mofr'],
-                    'kurse': sequence_df.at[i, 'kurse_mofr'],
-                }
-                mofr_info.update(base_info)
+                mofr_info = get_mofr_info()
                 df_ov_route_sections = df_ov_route_sections.append(mofr_info, ignore_index=True)
-                sa_info = {
-                    'zeitraum': 'Sa',
-                    'besetzung': sequence_df.at[i, 'bes_sa'],
-                    'zugestiegen': sequence_df.at[i, 'ein_sa'],
-                    'kurse': sequence_df.at[i, 'kurse_sa'],
-                }
-                sa_info.update(base_info)
-                df_ov_route_sections.append(mofr_info, ignore_index=True)
-                so_info = {
-                    'zeitraum': 'So',
-                    'besetzung': sequence_df.at[i, 'bes_so'],
-                    'zugestiegen': sequence_df.at[i, 'ein_so'],
-                    'kurse': sequence_df.at[i, 'kurse_so'],
-                }
-                so_info.update(base_info)
-                df_ov_route_sections.append(mofr_info, ignore_index=True)
 
+                sa_info = get_sa_info()
+                df_ov_route_sections = df_ov_route_sections.append(sa_info, ignore_index=True)
+
+                so_info =get_so_info()
+                df_ov_route_sections = df_ov_route_sections.append(so_info, ignore_index=True)
+        print(line_df[1]['linie'])
+
+    df_ov_route_sections.to_json(DF_JSON_FUER_MAURUS)
     fields = df_ov_route_sections.to_dict('index')
     allmost_done_dict = list({'fields': entry} for entry in fields.values())
     outfile = open(FP_OV_ROUTE_SECTIONS_JSON, "w")
     json.dump(allmost_done_dict, outfile)
+

@@ -36,3 +36,6 @@ Für die Analyse konnten auch nur die Datensätze von der VBSG verwendet werden.
 # Ausblick 
 
 Mit diesem Datensatz können Passagierströme auch gefun
+
+Das Python-Skript für das berechnen des Grenzverkehrs kann mit einer REST-API erweitert werden, damit die Datensätze dynamisch generiert werden können
+

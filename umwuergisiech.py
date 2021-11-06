@@ -3,7 +3,7 @@ import json
 import pandas as pd
 import requests
 
-FP_DATA_BUFFER_JSON = 'ov_data_buffer_full.json'
+FP_DATA_BUFFER_JSON = 'ov_data_buffer_small.json'
 FP_OV_ROUTE_SECTIONS_JSON = 'ov_route_sections.json'
 DF_JSON_FUER_MAURUS = 'ov_route_sections_df.json'
 
@@ -74,11 +74,11 @@ def copy_if_available(df_src: pd.DataFrame, index, parameter_name_src, dict_dest
         dict_destination[parameter_name_destination] = df_src.at[index, parameter_name_src]
 
 
-def add_geopoos(base_info):
-    base_info['GeoShape'] = {'type': 'LineString',
-                             'coordinates':
-                                 [sequence_df.at[i, 'geopos'],
-                                  sequence_df.at[i + 1, 'geopos']]},
+def get_geopos(sequence_df):
+    return {'type': 'LineString',
+            'coordinates':
+                [sequence_df.at[i, 'geopos'],
+                 sequence_df.at[i + 1, 'geopos']]}
 
 
 def get_base_info():
@@ -87,7 +87,7 @@ def get_base_info():
     copy_if_available(df_ov_stops, i + 1, 'didok_nr', base_info, 'didok_nr_ende'),
     copy_if_available(df_ov_stops, i, 'linie', base_info, 'linie'),
     copy_if_available(df_ov_stops, i, 'richtung', base_info, 'richtung'),
-    add_geopoos(base_info)
+    base_info['GeoPos'] = get_geopos(sequence_df)
     copy_if_available(df_ov_stops, i, 'region', base_info, 'region'),
     copy_if_available(df_ov_stops, i, 'kt', base_info, 'kt'),
     copy_if_available(df_ov_stops, i, 'gemeinde', base_info, 'gemeinde'),

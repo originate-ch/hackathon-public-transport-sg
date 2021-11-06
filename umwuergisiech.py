@@ -5,13 +5,14 @@
 
 import pandas as pd
 import requests
+import json
 
-FP_DATA_BUFFER_JSON = 'ov_data_buffer.json'
-
+FP_DATA_BUFFER_JSON = 'ov_data_buffer_full.json'
+FP_OV_ROUTE_SECTIONS_JSON = 'ov_route_sections.json'
 
 def get_year_data_from_server(year):
     r = requests.get(
-        f'https://daten.sg.ch//api/records/1.0/search/?dataset=frequenzen-offentlicher-verkehr&q=&rows=-1&facet=fp_jahr&'
+        f'https://daten.sg.ch//api/records/1.0/search/?dataset=frequenzen-offentlicher-verkehr&q=&rows=500&facet=fp_jahr&'
         f'facet=didok_nr&facet=haltestelle_didok&facet=bemerkung_tu&facet=linie&facet=vm&facet=sequenz&refine.fp_jahr={year}')
     if r:
         year_data = r.json()
@@ -30,7 +31,7 @@ def get_data_from_server():
     return total_df
 
 
-def buffer_df(df):
+def buffer_data(df):
     buffer_file = open(FP_DATA_BUFFER_JSON, "w")
     buffer_file.write(df.to_json())
 
@@ -46,7 +47,7 @@ def get_df_ov_stops() -> pd.DataFrame:
     df_data_per_stop = get_buffered_df()
     if df_data_per_stop.empty:
         df_data_per_stop = get_data_from_server()
-        buffer_df(df_data_per_stop)
+        buffer_data(df_data_per_stop)
     return df_data_per_stop
 
 
@@ -81,22 +82,26 @@ if __name__ == '__main__':
                     'didok_nr_ende': sequence_df.at[i + 1, 'didok_nr'],
                     'linie': sequence_df.at[i, 'linie'],
                     'richtung': sequence_df.at[i, 'richtung'],
-                    'GeoShape': sequence_df.at[i, 'linie'],
+
+                    'GeoShape': {'type': 'LineString',
+                                 'coordinates':
+                                     [sequence_df.at[i, 'geopos'],
+                                      sequence_df.at[i + 1, 'geopos']]},
                     'vm': sequence_df.at[i, 'vm'],
                     'tu': sequence_df.at[i, 'tu'],
                     'fp_jahr': sequence_df.at[i, 'fp_jahr']}
                 mofr_info = {
                     'zeitraum': 'Mo - Fr',
                     'besetzung': sequence_df.at[i, 'bes_mofr'],
-                    'zuegestiegen': sequence_df.at[i, 'ein_mofr'],
+                    'zugestiegen': sequence_df.at[i, 'ein_mofr'],
                     'kurse': sequence_df.at[i, 'kurse_mofr'],
                 }
                 mofr_info.update(base_info)
-                df_ov_route_sections.append(mofr_info, ignore_index=True)
+                df_ov_route_sections = df_ov_route_sections.append(mofr_info, ignore_index=True)
                 sa_info = {
                     'zeitraum': 'Sa',
                     'besetzung': sequence_df.at[i, 'bes_sa'],
-                    'zuegestiegen': sequence_df.at[i, 'ein_sa'],
+                    'zugestiegen': sequence_df.at[i, 'ein_sa'],
                     'kurse': sequence_df.at[i, 'kurse_sa'],
                 }
                 sa_info.update(base_info)
@@ -104,10 +109,13 @@ if __name__ == '__main__':
                 so_info = {
                     'zeitraum': 'So',
                     'besetzung': sequence_df.at[i, 'bes_so'],
-                    'zuegestiegen': sequence_df.at[i, 'ein_so'],
+                    'zugestiegen': sequence_df.at[i, 'ein_so'],
                     'kurse': sequence_df.at[i, 'kurse_so'],
                 }
                 so_info.update(base_info)
                 df_ov_route_sections.append(mofr_info, ignore_index=True)
 
-            print('uii')
+    fields = df_ov_route_sections.to_dict('index')
+    allmost_done_dict = list({'fields': entry} for entry in fields.values())
+    outfile = open(FP_OV_ROUTE_SECTIONS_JSON, "w")
+    json.dump(allmost_done_dict, outfile)

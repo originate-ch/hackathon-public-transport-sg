@@ -1,5 +1,6 @@
 # project specific
-/ov_data_buffer.json
+/ov_data_buffer_full.json
+/ov_data_buffer_small.json
 
 
 # Byte-compiled / optimized / DLL files

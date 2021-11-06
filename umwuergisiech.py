@@ -1,6 +1,5 @@
-
-
 import json
+
 import pandas as pd
 import requests
 
@@ -70,9 +69,9 @@ def initialize_df_ov_route_sections():
     return df
 
 
-def copy_if_available(df_src, index, parameter_name_src, dict_destination, parameter_name_destination):
-    if df_src.at[index, parameter_name_src]:
-        dict_destination[parameter_name_destination]: df_src.at[index, parameter_name_src]
+def copy_if_available(df_src: pd.DataFrame, index, parameter_name_src, dict_destination, parameter_name_destination):
+    if not df_src.at[index, parameter_name_src] == pd.np.nan:
+        dict_destination[parameter_name_destination] = df_src.at[index, parameter_name_src]
 
 
 def add_geopoos(base_info):
@@ -100,7 +99,7 @@ def get_base_info():
 
 def get_mofr_info():
     mofr_info = {'zeitraum': 'Mo - Fr'}
-    copy_if_available(df_ov_stops, i, 'bes_mofr', mofr_info,'besetzung' ),
+    copy_if_available(df_ov_stops, i, 'bes_mofr', mofr_info, 'besetzung'),
     copy_if_available(df_ov_stops, i, 'ein_mofr', mofr_info, 'zugestiegen'),
     copy_if_available(df_ov_stops, i, 'kurse_mofr', mofr_info, 'kurse'),
     mofr_info.update(base_info)
@@ -109,8 +108,8 @@ def get_mofr_info():
 
 def get_sa_info():
     sa_info = {'zeitraum': 'Sa'}
-    copy_if_available(df_ov_stops, i, 'bes_sa', sa_info,'besetzung' ),
-    copy_if_available(df_ov_stops, i,'ein_sa', sa_info, 'zugestiegen'),
+    copy_if_available(df_ov_stops, i, 'bes_sa', sa_info, 'besetzung'),
+    copy_if_available(df_ov_stops, i, 'ein_sa', sa_info, 'zugestiegen'),
     copy_if_available(df_ov_stops, i, 'kurse_sa', sa_info, 'kurse'),
     sa_info.update(base_info)
     return sa_info
@@ -142,13 +141,15 @@ if __name__ == '__main__':
                 sa_info = get_sa_info()
                 df_ov_route_sections = df_ov_route_sections.append(sa_info, ignore_index=True)
 
-                so_info =get_so_info()
+                so_info = get_so_info()
                 df_ov_route_sections = df_ov_route_sections.append(so_info, ignore_index=True)
-        print(line_df[1]['linie'])
+        print(f"Linie: {line_df[1]['linie'].values[0]}")
+
+    # todo: improve nan handling --> not in dataset if nan
+    df_ov_route_sections = df_ov_route_sections.fillna(0)
 
     df_ov_route_sections.to_json(DF_JSON_FUER_MAURUS)
     fields = df_ov_route_sections.to_dict('index')
     allmost_done_dict = list({'fields': entry} for entry in fields.values())
     outfile = open(FP_OV_ROUTE_SECTIONS_JSON, "w")
     json.dump(allmost_done_dict, outfile)
-

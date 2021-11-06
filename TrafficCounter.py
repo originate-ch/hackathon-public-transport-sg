@@ -1,3 +1,5 @@
+import time
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -7,6 +9,20 @@ class Point:
     def __init__(self, x, y):
         self.x = x
         self.y = y
+
+    def __add__(self, other):
+        return Point(self.x + other.x, self.y + other.y)
+
+    def __sub__(self, other):
+        return Point(self.x - other.x, self.y - other.y)
+
+    def __rmul__(self, other):
+        return Point(other * self.x, other * self.y)
+
+    def __truediv__(self, other):
+        if other == 0.0:
+            raise ZeroDivisionError('Cannot divide by 0.')
+        return Point(self.x / other, self.y / other)
 
 
 class Line:
@@ -42,39 +58,77 @@ def check_intersection(line1: Line, line2: Line) -> bool:
     orientation_line1_P2 = compute_orientation(P1, Q1, P2)
     orientation_line1_Q2 = compute_orientation(P1, Q1, Q2)
     orientation_line2_P1 = compute_orientation(P2, Q2, P1)
-    orientation_line2_Q1 = compute_orientation(P2, Q2, P1)
+    orientation_line2_Q1 = compute_orientation(P2, Q2, Q1)
 
     if orientation_line1_P2 != orientation_line1_Q2 and orientation_line2_P1 != orientation_line2_Q1:
         return True
 
-    if orientation_line1_P2 and is_on_line(line1, P2):
+    if orientation_line1_P2 == 0 and is_on_line(line1, P2):
         return True
-    if orientation_line1_Q2 and is_on_line(line1, Q2):
+    if orientation_line1_Q2 == 0 and is_on_line(line1, Q2):
         return True
-    if orientation_line2_P1 and is_on_line(line2, P1):
+    if orientation_line2_P1 == 0 and is_on_line(line2, P1):
         return True
-    if orientation_line2_Q1 and is_on_line(line2, Q1):
+    if orientation_line2_Q1 == 0 and is_on_line(line2, Q1):
         return True
 
     else:
         return False
 
 
-def test_intersection_function(line1: Line, line2: Line) -> None:
-    print('Lines do intersect: {}'.format(check_intersection(line1, line2)))
-    P1, Q1 = line1.start_point, line1.end_point
-    P2, Q2 = line2.start_point, line2.end_point
-    plt.plot([P1.x, Q1.x], [P1.y, Q1.y], label='Line 1')
-    plt.plot([P2.x, Q2.x], [P2.y, Q2.y], label='Line 2')
-    plt.legend()
-    plt.show()
+def test_intersection_function() -> None:
+    P1 = Point(0, 0)
+    Q1 = Point(10, 0)
+    P2 = Point(0, -1)
+    line1 = Line(P1, Q1)
+    list_Q2 = [Point(10, -1), Point(15, 0), Point(10, 0), Point(10, 1), Point(0, 1), Point(0, 0), Point(-5, 0)]
+    for Q2 in list_Q2:
+        line2 = Line(P2, Q2)
+        start = time.time()
+        intersect = check_intersection(line1, line2)
+        end = time.time()
+        print('Lines do intersect: {}'.format(intersect))
+        print('Time to compute intersection: {}'.format(end - start))
+        P1, Q1 = line1.start_point, line1.end_point
+        P2, Q2 = line2.start_point, line2.end_point
+        plt.plot([P1.x, Q1.x], [P1.y, Q1.y], label='Line 1')
+        plt.plot([P2.x, Q2.x], [P2.y, Q2.y], label='Line 2')
+        plt.title('Intersection={}'.format(intersect))
+        plt.legend()
+        plt.show()
     return None
 
 
-P1 = Point(1, 1)
-Q1 = Point(10, 1)
-P2 = Point(1, 2)
-Q2 = Point(10, 2)
-line1 = Line(P1, Q1)
-line2 = Line(P2, Q2)
-test_intersection_function(line1, line2)
+def get_middle_index(points_list: list) -> int:
+    nb_segments = len(points_list)
+    return nb_segments // 2
+
+
+def compute_label_points(points_list: list) -> (Point, Point):
+    idx = get_middle_index(points_list)
+    P, Q = points_list[idx], points_list[idx + 1]
+    M = (P + Q) / 2.0
+    segment_vec = Q - P
+    translate_vec = Point(segment_vec.y, -segment_vec.x)
+    L1 = M + 0.5 * translate_vec
+    L2 = M - 0.5 * translate_vec
+    return L1, L2
+
+
+def test_label_points():
+    points_list = [Point(0.0, 0.0), Point(1.0, 0.0), Point(1.0, 1.0), Point(0.0, 2.0), Point(-1.0, 1.0)]
+    x_vals = [P.x for P in points_list]
+    y_vals = [P.y for P in points_list]
+    L1, L2 = compute_label_points(points_list)
+
+    plt.plot(x_vals, y_vals)
+    plt.scatter(L1.x, L1.y, color='red')
+    plt.scatter(L2.x, L2.y, color='red')
+    plt.xlim(-2, 2)
+    plt.ylim(-1, 3)
+    plt.grid()
+    plt.show()
+
+
+# test_intersection_function()
+# test_label_points()

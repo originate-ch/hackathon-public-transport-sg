@@ -1,6 +1,5 @@
 import json
 import time
-import numpy as np
 import pandas as pd
 from more_itertools import pairwise
 import matplotlib.pyplot as plt
@@ -99,6 +98,7 @@ def compute_label_points(points_list: list) -> (Point, Point):
     L2 = M - 0.5 * translate_vec
     return L1, L2
 
+
 """
 # not needed right now
 
@@ -162,14 +162,17 @@ def set_export_path(path_to_border):
     return path_export
 
 
-def main_traffic_counter(path_to_df: str, path_to_border: str) -> None:
+def main_traffic_counter(path_to_df: str, path_to_border: str, year=2019, week_slot='Mo - Fr') -> None:
     traffic_data = pd.read_json(path_to_df)
+    traffic_data = traffic_data[traffic_data['fp_jahr'] == year]
+    traffic_data = traffic_data[traffic_data['zeitraum'] == week_slot]
     with open(path_to_border) as in_file:
         border_collection = json.load(in_file)
     for border_dict in border_collection:
         traffic_flow = compute_intersection_one_border_all_traffic_lines(border_dict, traffic_data)
-        border_dict['in_left'] = traffic_flow[-1]
-        border_dict['in_right'] = traffic_flow[1]
+        border_dict['fields']['in_left'] = traffic_flow[-1]
+        border_dict['fields']['in_right'] = traffic_flow[1]
+        border_dict['fields']['in_total'] = traffic_flow[1] + traffic_flow[-1]
     export_path = set_export_path(path_to_border)
     with open(export_path, 'w') as out_file:
         json.dump(border_collection, out_file)
@@ -239,8 +242,8 @@ def test_main_TrafficCounter() -> None:
     # test function
     for border_dict in border_collection:
         traffic_flow = compute_intersection_one_border_all_traffic_lines(border_dict, df_traffic)
-        border_dict['in_left'] = traffic_flow[-1]
-        border_dict['in_right'] = traffic_flow[1]
+        border_dict['in_right'] = traffic_flow[-1]
+        border_dict['in_left'] = traffic_flow[1]
     export_path = set_export_path(path_to_border)
     with open(export_path, 'w') as out_file:
         json.dump(border_collection, out_file)
@@ -259,6 +262,15 @@ def test_main_TrafficCounter() -> None:
     plt.show()
     return None
 
+
 # test_intersection_function()
 # test_label_points()
 test_main_TrafficCounter()
+
+# -------------------------------------------------------------------------
+# apply main function
+# -------------------------------------------------------------------------
+"""
+main_traffic_counter(path_to_df='ov_route_sections_FULL_df.json',
+                     path_to_border='example json/borders_presentation.json')
+"""

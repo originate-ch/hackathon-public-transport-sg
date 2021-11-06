@@ -8,7 +8,7 @@ Der folgende Case wird vom Hackathon-Event zur Verfügung gestellt:
 
 
 
-Unsere
+Unser Ziel orientiert sich an dieser Fragestellung. Wir haben versucht, die Personenströme des öffentlichen Verkehrs im Kanton St. Gallen darzustellen. Dies auf zwei Arten: entlang der Verkehrsachsen und über frei definierbare Grenzen hinweg.
 
 # Datensatz
 
@@ -21,21 +21,22 @@ Unsere
 
 Im ersten Schritt wird der auf daten.sg.ch zur Verfügung gestellte Datensatz zu den ÖV Frequenzen an den Haltestellen umgebaut. Das heisst, dass die Personen-Besetzung und die Ein- und Ausstiege von den ÖV Fahrzeugen an den Haltestellen auf die Strecke umgerechnet wird. Somit weiss man, wie viele Personen 
 
-Anschliessend kann über eine freidefinierbare Linie eine Grenze erstellt werden. Mit dem neuen Datensatz kann die Frequenz an der Grenze berechnet werden. Dies gibt Transparenz, wie viele Personen diese Grenze übertreten
+Anschliessend kann über eine freidefinierbare Linie eine Grenze erstellt werden. Mit dem neuen Datensatz kann die Frequenz an der Grenze berechnet werden. Dies gibt Transparenz, wie viele Personen diese Grenze passieren.
 
 
 
 # Datenlage
 
-Zur Zeit stehen nur Durschnitte pro Jahr zur Verfügung. Somit ist eine Auflösung nach Uhrzeit und Datum nicht möglich. Somit sind auch zeitlich definierte Auslastungen der ÖV Fahrzeugen nicht möglich
+Zur Zeit stehen nur durchschnittliche Tageswerte über ein Jahr zur Verfügung. Somit ist eine Auflösung nach Uhrzeit und Datum nicht möglich. Somit sind auch zeitlich definierte Auslastungen der ÖV Fahrzeugen nicht möglich
 
-Der Ausgangsdatensatz hat auch nur Informationen der Regionalen Verkehrsunternehmen. Die Daten des Fernverkehrs fehlen.
+Der Ausgangsdatensatz hat auch nur Informationen der regionalen Verkehrsunternehmen. Die Daten des Fernverkehrs fehlen.
 
-Für die Analyse konnten auch nur die Datensätze von der VBSG verwendet werden. 
+Die Daten aus jüngerer Zeit weisen - unserer Ansicht nacht - eine höhere Qualität aus.
 
 # Ausblick 
 
-Mit diesem Datensatz können Passagierströme auch gefun
-
-Das Python-Skript für das berechnen des Grenzverkehrs kann mit einer REST-API erweitert werden, damit die Datensätze dynamisch generiert werden können
+Verschiedene Erweiterungen der bisherigen Lösung sind denkbar:
+- Auswerten und Vergleich anderer Verkehrsteilnehmer, insbesondere Velo und motorisierter Individualverkehr
+- Erweitern des Python-Skript für das Berechnen des Grenzverkehrs mit einer REST-API, damit Datensätze dynamisch generiert werden können
+- Verwenden des Tools zur Erfassung von Transitverkehr
 

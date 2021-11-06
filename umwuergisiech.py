@@ -5,7 +5,7 @@ import requests
 
 GEO_SHAPE = 'GeoShape'
 
-FP_DATA_BUFFER_JSON = 'ov_data_buffer_vbsg.json'
+FP_DATA_BUFFER_JSON = 'ov_data_buffer_full.json'
 FP_OV_ROUTE_SECTIONS_JSON = 'ov_route_sections_vbsg.json'
 DF_JSON_FUER_MAURUS = 'ov_route_sections_df.json'
 
@@ -13,7 +13,7 @@ DF_JSON_FUER_MAURUS = 'ov_route_sections_df.json'
 def get_year_data_from_server(year):
     r = requests.get(
         f'https://daten.sg.ch//api/records/1.0/search/?dataset=frequenzen-offentlicher-verkehr&q=&rows=500&facet=fp_jahr&'
-        f'facet=didok_nr&facet=haltestelle_didok&facet=bemerkung_tu&facet=linie&facet=vm&facet=sequenz&refine.fp_jahr={year}&refine.tu=VBSG')
+        f'facet=didok_nr&facet=haltestelle_didok&facet=bemerkung_tu&facet=linie&facet=vm&facet=sequenz&refine.fp_jahr={year}')
     if r:
         year_data = r.json()
         year_records = year_data['records']

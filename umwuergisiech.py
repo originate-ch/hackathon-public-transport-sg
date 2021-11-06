@@ -5,15 +5,15 @@ import requests
 
 GEO_SHAPE = 'GeoShape'
 
-FP_DATA_BUFFER_JSON = 'ov_data_buffer_full.json'
-FP_OV_ROUTE_SECTIONS_JSON = 'ov_route_sections.json'
+FP_DATA_BUFFER_JSON = 'ov_data_buffer_vbsg.json'
+FP_OV_ROUTE_SECTIONS_JSON = 'ov_route_sections_vbsg.json'
 DF_JSON_FUER_MAURUS = 'ov_route_sections_df.json'
 
 
 def get_year_data_from_server(year):
     r = requests.get(
         f'https://daten.sg.ch//api/records/1.0/search/?dataset=frequenzen-offentlicher-verkehr&q=&rows=500&facet=fp_jahr&'
-        f'facet=didok_nr&facet=haltestelle_didok&facet=bemerkung_tu&facet=linie&facet=vm&facet=sequenz&refine.fp_jahr={year}')
+        f'facet=didok_nr&facet=haltestelle_didok&facet=bemerkung_tu&facet=linie&facet=vm&facet=sequenz&refine.fp_jahr={year}&refine.tu=VBSG')
     if r:
         year_data = r.json()
         year_records = year_data['records']
@@ -66,7 +66,8 @@ def initialize_df_ov_route_sections():
                'zeitraum',
                'besetzung',
                'zugestiegen',
-               'kurse']
+               'kurse'
+               'GeoPoint']
     df = pd.DataFrame(columns=columns)
     return df
 
@@ -78,14 +79,15 @@ def copy_if_available(df_src: pd.DataFrame, index, parameter_name_src, dict_dest
 
 def get_geopos(sequence_df, current_sequence):
     start_coordinates = sequence_df.at[current_sequence, 'geopos']
+
     end_coordinates = sequence_df.at[current_sequence + 1, 'geopos']
     if start_coordinates is None or end_coordinates is None:
         return None
     else:
         return {'type': 'LineString',
                 'coordinates':
-                    [start_coordinates,
-                     end_coordinates]}
+                    [start_coordinates[::-1],
+                     end_coordinates[::-1]]}
 
 
 def get_base_info(current_sequence):

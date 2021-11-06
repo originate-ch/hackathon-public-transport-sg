@@ -62,7 +62,7 @@ def initialize_df_ov_route_sections():
                'fp_jahr',
                'zeitraum',
                'besetzung',
-               'zuegestiegen',
+               'zugestiegen',
                'kurse']
     df = pd.DataFrame(columns=columns)
     return df

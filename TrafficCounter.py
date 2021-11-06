@@ -129,7 +129,17 @@ def compute_direction_traffic(line_border: Line, line_traffic: Line) -> int:
         return 1
 
 
-def compute_intersection_one_border_all_traffic_lines(border_points: list, traffic_data: pd.DataFrame) -> dict:
+def geoshape_to_points(border_dict: dict) -> list:
+    border_points = []
+    pts_list = border_dict['fields']['geoshape']['coordinates']
+    for pt in pts_list:
+        border_points.append(Point(pt[0], pt[1]))
+    return border_points
+
+
+def compute_intersection_one_border_all_traffic_lines(border_dict: dict, traffic_data: pd.DataFrame) -> dict:
+    border_points = geoshape_to_points(border_dict)
+
     incoming_traffic_flows = {-1: 0.0, 1: 0.0}
     for _, row in traffic_data.iterrows():
         A = Point(row['GeoShape']['coordinates'][0][0], row['GeoShape']['coordinates'][0][1])
@@ -140,28 +150,30 @@ def compute_intersection_one_border_all_traffic_lines(border_points: list, traff
             if do_intersect(line_border, line_traffic):
                 direction = compute_direction_traffic(line_border, line_traffic)
                 incoming_traffic_flows[direction] += row['besetzung']
+
+    # L1, L2 = compute_label_points(border_points)
+    # traffic_flow_info = (L1, L2, incoming_traffic_flows)
     return incoming_traffic_flows
 
 
-def compute_traffic_flow(border_traverses: list, traffic_data: pd.DataFrame) -> list:
-    traffic_flow_info = []
-    for border_points in border_traverses:
-        L1, L2 = compute_label_points(border_points)
-        incoming_traffic_flows = compute_intersection_one_border_all_traffic_lines(border_points, traffic_data)
-        traffic_flow_info.append((L1, L2, incoming_traffic_flows))
-        # traffic_flow_info.append(incoming_traffic_flows)
-    return traffic_flow_info
+def set_export_path(path_to_border):
+    end = path_to_border.rfind('.json')
+    path_export = path_to_border[:end] + '_TrafficFlow.json'
+    return path_export
 
 
-def geoshape_to_points(border_dict):
-    pass
-
-
-def main_traffic_counter(path_to_df, path_to_border):
-    df = pd.read_json(path_to_df)
-    border_dict = json.load(path_to_border)
-    border_traverses = geoshape_to_points(border_dict)
-    traffic_flow_info =
+def main_traffic_counter(path_to_df: str, path_to_border: str) -> None:
+    traffic_data = pd.read_json(path_to_df)
+    with open(path_to_border) as in_file:
+        border_collection = json.load(in_file)
+    for border_dict in border_collection:
+        traffic_flow = compute_intersection_one_border_all_traffic_lines(border_dict, traffic_data)
+        border_dict['in_left'] = traffic_flow[-1]
+        border_dict['in_right'] = traffic_flow[1]
+    export_path = set_export_path(path_to_border)
+    with open(export_path, 'w') as out_file:
+        json.dump(border_collection, out_file)
+    return None
 
 
 # -------------------------------------------------------------------------
@@ -206,10 +218,8 @@ def test_label_points() -> None:
     plt.show()
 
 
-def test_intersect_border_traffic_lines() -> None:
-    #border_points = [Point(9.325053, 47.408690), Point(9.232165, 47.406926), Point(9.235563, 47.405088)]
-    #df_traffic = pd.read_json('ov_route_sections_df.json')
-    border_points = [Point(0.0, 0.0), Point(1.0, 0.0), Point(2.0, 1.0), Point(3.0, 1.0)]
+def test_main_TrafficCounter() -> None:
+    # set traffic data frame
     row_1 = {'GeoShape': {'coordinates': [[0.0, -1.0], [1.0, -1.0]]}, 'besetzung': 100.5}
     row_2 = {'GeoShape': {'coordinates': [[1.0, -1.0], [0.0, 1.0]]}, 'besetzung': 1.1}
     row_3 = {'GeoShape': {'coordinates': [[0.0, 1.0], [1.0, 1.0]]}, 'besetzung': 100.5}
@@ -218,11 +228,28 @@ def test_intersect_border_traffic_lines() -> None:
     row_6 = {'GeoShape': {'coordinates': [[1.0, 0.5], [2.0, 0.5]]}, 'besetzung': 1.7}
     row_7 = {'GeoShape': {'coordinates': [[3.0, 0.0], [4.0, 2.0]]}, 'besetzung': 100.0}
     df_traffic = pd.DataFrame(columns=['GeoShape', 'besetzung'])
-    print(df_traffic.head)
     for row in [row_1, row_2, row_3, row_4, row_5, row_6, row_7]:
         df_traffic = df_traffic.append(row, ignore_index=True)
-    incoming_traffic = compute_intersection_one_border_all_traffic_lines(border_points, df_traffic)
-    print(incoming_traffic)
+
+    # load border from json
+    path_to_border = 'example json/border_example.json'
+    with open(path_to_border, 'r') as in_file:
+        border_collection = json.load(in_file)
+
+    # test function
+    for border_dict in border_collection:
+        traffic_flow = compute_intersection_one_border_all_traffic_lines(border_dict, df_traffic)
+        border_dict['in_left'] = traffic_flow[-1]
+        border_dict['in_right'] = traffic_flow[1]
+    export_path = set_export_path(path_to_border)
+    with open(export_path, 'w') as out_file:
+        json.dump(border_collection, out_file)
+
+    # matplotlib visualisation
+    border_points = geoshape_to_points(border_dict)
+    for row in [row_1, row_2, row_3, row_4, row_5, row_6, row_7]:
+        df_traffic = df_traffic.append(row, ignore_index=True)
+
     plt.plot([P.x for P in border_points], [P.y for P in border_points], lw=4.0, label='border')
     for row in [row_1, row_2, row_3, row_4, row_5, row_6, row_7]:
         x_vals = [p[0] for p in row['GeoShape']['coordinates']]
@@ -234,4 +261,4 @@ def test_intersect_border_traffic_lines() -> None:
 
 # test_intersection_function()
 # test_label_points()
-test_intersect_border_traffic_lines()
+test_main_TrafficCounter()

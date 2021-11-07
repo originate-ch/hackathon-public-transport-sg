@@ -47,7 +47,8 @@ def _buffer_data(df):
 def get_buffered_df(path=FP_DATA_BUFFER_JSON):
     try:
         return pd.io.json.read_json(path)
-    except:
+    except Exception as e:
+        print(f'Buffer not found --> {e}')
         return pd.DataFrame()
 
 
@@ -96,7 +97,8 @@ def _fetch_geo_shape(sequence_df, _current_sequence):
                 'coordinates':
                     [start_coordinates[::-1],
                      end_coordinates[::-1]]}
-    except:
+    except Exception as e:
+        print(f'Problem mit geopos -> {e}')
         return None
 
 

@@ -32,7 +32,7 @@ Die Daten aus jüngerer Zeit weisen - unserer Ansicht nacht - eine höhere Quali
 
 Im ersten Schritt wird der auf daten.sg.ch zur Verfügung gestellte Datensatz zu den ÖV Frequenzen an den Haltestellen umgebaut. Das heisst, dass die Personen-Besetzung und die Ein- und Ausstiege von den ÖV Fahrzeugen an den Haltestellen auf die Strecke umgerechnet wird. Somit weiss man, wie viele Personen 
 
-Anschliessend kann über eine freidefinierbare Linie eine Grenze erstellt werden. Mit dem neuen Datensatz kann die Frequenz an der Grenze berechnet werden. Dies gibt Transparenz, wie viele Personen diese Grenze passieren.
+Anschliessend kann über eine frei definierbare Linie eine Grenze erstellt werden. Mit dem neuen Datensatz kann die Frequenz an der Grenze berechnet werden. Dies gibt Transparenz, wie viele Personen diese Grenze passieren.
 
 ## Anwendung
 Das erste Skript `DataReshaper.py` dient dazu, den Datensatz zu den Haltestellenfrequenzen zu Bereinigen und die Information auf Strecken zwischen den Haltestellen zu übertragen. Das zweite Skript `TrafficCounter.py` benutzt diesen angepassten Datensatz, um den Personenfluss über Grenzen zu berechnen. Diese Grenzen müssen in einem JSON File definiert sein.
